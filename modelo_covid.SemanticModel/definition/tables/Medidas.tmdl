@@ -1,0 +1,19 @@
+table Medidas
+	lineageTag: 389cf2a0-d0ac-458f-83e8-feb8fb301c91
+
+	measure casos_totales = SUM('owid-covid-latest'[total_cases])
+		formatString: #,0
+		lineageTag: 01a243f3-8f66-4853-ae8e-bb3a357aa5ec
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
