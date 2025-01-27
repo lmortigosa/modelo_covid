@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "54pt",
-                      "color": "#dd6b7f"
+                      "color": "#1c544a"
                     }
                   }
                 ],
@@ -43,8 +43,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0.6
+                      "ColorId": 3,
+                      "Percent": 0
                     }
                   }
                 }

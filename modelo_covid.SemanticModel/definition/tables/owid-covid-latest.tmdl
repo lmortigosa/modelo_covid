@@ -1,6 +1,8 @@
 table owid-covid-latest
 	lineageTag: 223996da-7bed-430f-822a-ff8ec05d4d91
 
+	measure TotalCases = SUM(owid-covid-latest[total_cases])
+
 	column iso_code
 		dataType: string
 		lineageTag: 52c376e0-d8c4-4818-9f62-28aa39a14e22
