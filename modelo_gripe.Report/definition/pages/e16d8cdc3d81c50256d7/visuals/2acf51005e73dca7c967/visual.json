@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "2acf51005e73dca7c967",
+  "position": {
+    "x": 8,
+    "y": 208,
+    "z": 1000,
+    "height": 392,
+    "width": 679.99999999999989,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "owid-covid-latest"
+                    }
+                  },
+                  "Property": "continent"
+                }
+              },
+              "queryRef": "owid-covid-latest.continent",
+              "nativeQueryRef": "continent",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "owid-covid-latest"
+                        }
+                      },
+                      "Property": "new_cases"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(owid-covid-latest.new_cases)",
+              "nativeQueryRef": "Suma de new_cases"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "owid-covid-latest"
+                        }
+                      },
+                      "Property": "new_deaths"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(owid-covid-latest.new_deaths)",
+              "nativeQueryRef": "Suma de new_deaths"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
